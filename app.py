@@ -29,6 +29,8 @@ from reportlab.platypus import (
     TableStyle
 )
 from reportlab.lib.units import inch
+import nltk
+nltk.data.path.append("/opt/render/project/src/nltk_data")
 
 
 app = Flask(__name__)
