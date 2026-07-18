@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+venv/
+.env
+
+# Uploads
+uploads/
+
+# Generated Reports
+*.pdf
+*.xlsx
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store

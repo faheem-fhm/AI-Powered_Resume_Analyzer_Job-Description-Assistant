@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Job Description & Skill Extractor</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="theme-toggle">
+
+    <button id="theme-btn">
+        🌙
+    </button>
+
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🤖 AI Job Description & Skill Extractor</h1>
+
+        <p class="subtitle">
+
+            Upload your Job Description and let AI extract
+
+            skills, education, experience and responsibilities.
+
+        </p>
+
+        <form
+            action="/"
+            method="POST"
+            enctype="multipart/form-data"
+            id="upload-form"
+        >
+
+            <div
+                class="upload-box"
+                id="drop-area"
+            >
+
+                <div class="icon">
+
+                    ☁️
+
+                </div>
+
+                <h2>
+
+                    Drag & Drop File
+
+                </h2>
+
+                <p>
+
+                    or
+
+                </p>
+
+               <!-- Resume Upload -->
+
+                <h3 style="margin-top:20px;">📄 Upload Resume</h3>
+
+                <input
+                    type="file"
+                    id="resume_file"
+                    name="resume_file"
+                    accept=".pdf,.doc,.docx,.txt"
+                    hidden
+                >
+
+                <label
+                    for="resume_file"
+                    class="upload-btn"
+                >
+
+                    Choose Resume
+
+                </label>
+
+                <div id="resume-preview">
+
+                    <div id="resume-name">
+
+                        No Resume Selected
+
+                    </div>
+
+                </div>
+
+                <br><br>
+
+                <!-- Job Description Upload -->
+
+                <h3>📄 Upload Job Description</h3>
+
+                <input
+                    type="file"
+                    id="job_file"
+                    name="job_file"
+                    accept=".pdf,.doc,.docx,.txt"
+                    hidden
+                >
+
+                <label
+                    for="job_file"
+                    class="upload-btn"
+                >
+
+                    Choose Job Description
+
+                </label>
+
+                <div id="job-preview">
+
+                    <div id="job-name">
+
+                        No Job Description Selected
+
+                    </div>
+
+                </div>
+                
+
+                <small>
+
+                    Supported :
+
+                    PDF
+
+                    DOCX
+
+                    TXT
+
+                </small>
+
+            </div>
+
+            <div
+                class="alert success"
+                id="success-alert"
+            >
+
+                ✔ File Uploaded Successfully
+
+            </div>
+
+            <div
+                class="alert error"
+                id="error-alert"
+            >
+
+                ❌ Invalid File
+
+            </div>
+
+            <button
+                class="extract-btn"
+                id="extract-btn"
+            >
+
+                Extract Skills
+
+            </button>
+
+            <div
+                class="loader"
+                id="loader"
+            >
+
+                <div class="spinner"></div>
+
+                <p>
+
+                    Extracting Skills...
+
+                </p>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script
+src="{{ url_for('static',
+filename='js/script.js') }}">
+</script>
+
+</body>
+
+</html>
